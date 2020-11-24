@@ -1,4 +1,4 @@
-import {from, fromEvent, interval, Observable, of, range} from "rxjs";
+import {from, fromEvent, interval, Observable, of, range, timer} from "rxjs";
 import {map, scan} from "rxjs/operators";
 
 
@@ -62,6 +62,15 @@ import {map, scan} from "rxjs/operators";
 //     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
 // })
 
-interval(500).subscribe(value => {
-    console.log(value)
-})
+// const sub = interval(500).subscribe(value => {
+//     console.log(value)
+// })
+//
+// setTimeout(() => {
+//     sub.unsubscribe()
+// }, 4000)
+
+// timer(2500).subscribe(v => console.log(v))
+
+// range(42, 10).subscribe((v) => console.log(v))
+
