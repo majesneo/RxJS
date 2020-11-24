@@ -36,6 +36,7 @@ btn.addEventListener('click', () => {
 });
 
 rxjsBtn.addEventListener('click', () => {
+    rxjsBtn.disabled = true;
     interval(1000)
         .pipe(
             take(people.length),
@@ -44,6 +45,6 @@ rxjsBtn.addEventListener('click', () => {
             scan((acc, v) => acc.concat(v), [])
         )
         .subscribe(res => {
-            display.textContent = res
-        })
+            display.textContent = res.join(' ')
+        }, null, () => rxjsBtn.disabled = false)
 })
